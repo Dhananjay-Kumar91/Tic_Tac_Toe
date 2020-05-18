@@ -167,3 +167,18 @@ def player_choice(board):
     return position
 
 
+
+##########################################################################################################
+#Function that asks the player if they want to play again and returns a boolean True if they do want to  #
+#play again.                                                                                             #
+##########################################################################################################
+
+def replay():
+    '''
+    
+    asks the player if they want to play again and returns a boolean True if they do want to play again
+    
+    '''
+    return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
+
+    
