@@ -140,5 +140,30 @@ def full_board_check(board):
     return True
 
 
+##########################################################################################################
+#Function that asks for a player's next position (as a number 1-9) and then uses the function from step 6#
+#to check if it's a free position. If it is, then return the position for later use.                     #
+##########################################################################################################
+
+def player_choice(board):
+    '''
+    
+    Input: Takes Board as input
+    output: returns position if the entered position is free
+    
+    '''
+    position = 0
+    count = 0
+    
+    while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board,position):
+        
+        if count < 1:
+            
+            position = int(input("Choose your next position: (1-9): "))
+            count += 1
+        else:
+            position = int(input("Entered Position out of range or Position already occupied \nChoose your next position: (1-9): "))
+            count += 1
+    return position
 
 
