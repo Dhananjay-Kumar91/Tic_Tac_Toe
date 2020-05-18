@@ -48,3 +48,18 @@ def player_input():
 
         return 'O', 'X'
 
+##########################################################################################################
+#Function that takes in the board list object, a marker ('X' or 'O'), and a desired position (number 1-9)#
+# and assigns it to the board.                                                                           #
+##########################################################################################################
+
+
+def place_marker(board, marker, position):
+    '''
+    Input: board list object, a marker ('X' or 'O'), and a desired position (number 1-9) and assigns it to the board
+    Output: None
+
+    '''
+
+    board[position] = marker
+
