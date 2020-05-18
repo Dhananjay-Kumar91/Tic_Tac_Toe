@@ -181,4 +181,79 @@ def replay():
     '''
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
 
+
+
+##########################################################################################################
+#Main Login For the Game                                                                                 #
+#                                                                                                        #
+##########################################################################################################
+
+
+
+print('Welcome to Tic Tac Toe!')
+
+while True:
+    #Re-setting the Board
+    myboard = [' ']*10
+    marker_P1,marker_P2 = player_input()
+    turn = choose_first()
+    print(turn+" will go first")
     
+    play_game = input("Are you ready to play? Enter Yes or No.")
+    if play_game.lower()[0] == 'y':
+        game_on = True
+    else:
+        game_on = False
+    
+    while game_on:
+        if turn == 'Player 1':
+            
+            #Player 1 turn
+            display_board(myboard) #Display The Current Board
+            print(turn)
+            position = player_choice(myboard) #Request position from user and check with the position is available, if so assign it to the variable
+            place_marker(myboard, marker_P1, position) #Mark the position with Current player marker
+        
+            if win_check(myboard, marker_P1):
+            
+                display_board(myboard) #Display The Current Board
+                print('Congratulations! '+ turn +' you have won the game!')
+                game_on = False
+                
+            else:
+                
+                if full_board_check(myboard):
+                
+                    display_board(myboard) #Display The Current Board
+                    print('The game is a draw!')
+                    game_on = False
+                    
+                else:
+                    turn = 'Player 2'
+        else:
+            
+            #Player 2 Turn
+            display_board(myboard) #Display The Current Board
+            print(turn)
+            position = player_choice(myboard) #Request position from user and check with the position is available, if so assign it to the variable
+            place_marker(myboard, marker_P2, position) #Mark the position with Current player marker
+            
+            if win_check(myboard, marker_P2):
+            
+                display_board(myboard) #Display The Current Board
+                print('Congratulations! '+ turn +' you have won the game!')
+                game_on = False
+                
+            else:
+                
+                if full_board_check(myboard):
+                
+                    display_board(myboard) #Display The Current Board
+                    print('The game is a draw!')
+                    game_on = False
+                    
+                else:
+                    turn = 'Player 1'   
+    if not replay():
+        break
+#END of Code
