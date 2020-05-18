@@ -104,7 +104,20 @@ def choose_first():
         return 'Player 1'
 
 
+##########################################################################################################
+#Function that returns a boolean indicating whether a space on the board is freely available.            #
+#                                                                                                        #
+##########################################################################################################
 
+def space_check(board, position):
+    
+    '''
+    Input: takes argument as board aand a position on the board
+    Output: Returns True if the the position is free on the board else returns error
+    
+    '''
+    return (board[position] == ' ')
+    
 
 
 
