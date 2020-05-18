@@ -117,7 +117,28 @@ def space_check(board, position):
     
     '''
     return (board[position] == ' ')
+
+
+##########################################################################################################
+#Function that checks if the board is full and returns a boolean value. True if full, False otherwise.   #
+#                                                                                                        #
+##########################################################################################################
+
+def full_board_check(board):
+    '''
+    Input: Takes in board as input
+    output: Returns Boolean True if the board is full else false
     
+    '''
+    
+    for i in range(1,10):
+        
+        if space_check(board,i):
+            
+            return False
+        
+    return True
+
 
 
 
