@@ -63,3 +63,26 @@ def place_marker(board, marker, position):
 
     board[position] = marker
 
+##########################################################################################################
+#Function that takes in a board and a mark (X or O) and then checks to see if that mark has won.         #
+#                                                                                                        #
+##########################################################################################################
+
+def win_check(board, mark):
+    '''
+    Input: board and a marker
+    Output: Check the board for win condition of 3 markers in a series and return Boolean True or False
+    
+    '''
+    
+    return ((board[7] == mark and board[8] == mark and board[9] == mark) or # Top Row Match
+    (board[7] == mark and board[8] == mark and board[9] == mark) or #Middle Row Match
+    (board[7] == mark and board[8] == mark and board[9] == mark) or # Botton row Match
+    (board[7] == mark and board[4] == mark and board[1] == mark) or #1st Left Column
+    (board[8] == mark and board[5] == mark and board[2] == mark) or #Middle Column
+    (board[9] == mark and board[6] == mark and board[3] == mark) or #Right Column
+    (board[7] == mark and board[5] == mark and board[3] == mark) or #Right Diagonal
+    (board[9] == mark and board[5] == mark and board[1] == mark)) #Left Diagonal
+    
+
+
